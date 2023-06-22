@@ -1,5 +1,5 @@
 {
-    "name": "contao/contao-vanilla-accordion-bundle",
+    "name": "ex-akt/contao-vanilla-accordion-bundle",
     "description": "Vanilla JS accordion",
     "license": "LGPL-3.0-or-later",
     "type": "contao-bundle",
