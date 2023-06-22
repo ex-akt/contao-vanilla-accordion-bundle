@@ -1,0 +1,37 @@
+<script>
+var Accordions = ( function()   {
+    'use strict';
+    var closeOthers=function(current,parent){
+        var opened=Array.from(parent.querySelectorAll('details[open]'));
+        console.log(opened);
+        opened.forEach(function(accordion){
+            if(accordion===current){return}accordion.removeAttribute('open')
+        })
+    };
+    var toggle=function(event,selector){
+        var parent=event.target.closest(selector);
+
+        if(!parent){
+            return
+        }
+        if(!event.target.hasAttribute('open'))
+        {
+            return
+        }
+        closeOthers(event.target,parent)};
+    var Constructor=function(selector){
+        var publicAPIs={};
+        var toggleHandler=function(event){toggle(event,selector)};
+        publicAPIs.destroy=function(){document.removeEventListener('toggle',toggleHandler,true)};
+        publicAPIs.init=function(){
+            if(!selector||typeof selector!=='string'){
+                throw new Error('Please provide a valid selector')
+            }
+            document.addEventListener('toggle',toggleHandler,true)};
+        publicAPIs.init();
+        return publicAPIs
+    };
+    return Constructor
+})();
+var accordion=new Accordions('body');
+</script>
