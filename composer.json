@@ -45,7 +45,7 @@
             "bin-links": false,
             "target-directory": "tools"
         },
-        "contao-manager-plugin": "Contao\\ContaoVanillaAccordionBundle\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "Exakt\\ContaoVanillaAccordionBundle\\ContaoManager\\Plugin"
     },
     "scripts": {
         "all": [
